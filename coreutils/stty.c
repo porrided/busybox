@@ -47,6 +47,8 @@
 # define _POSIX_VDISABLE ((unsigned char) 0)
 #endif
 
+#define VSTATUS 17
+
 #define Control(c) ((c) & 0x1f)
 /* Canonical values for control characters */
 #ifndef CINTR
