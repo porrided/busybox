@@ -48,6 +48,7 @@
 #endif
 
 #define VSTATUS 17
+#define NOKERNINFO 0400000
 
 #define Control(c) ((c) & 0x1f)
 /* Canonical values for control characters */
@@ -490,6 +491,9 @@ static const char mode_name[] ALIGN1 =
 #ifdef EXTPROC
 	MI_ENTRY("extproc",  local,       SANE_UNSET | REV,  EXTPROC,    0 )
 #endif
+#ifdef NOKERNINFO
+	MI_ENTRY("nokerninfo", local,     SANE_SET | REV,  NOKERNINFO, 0 )
+#endif
 	;
 
 #undef MI_ENTRY
@@ -653,6 +657,9 @@ static const struct mode_info mode_info[] = {
 	MI_ENTRY("flusho",   local,       SANE_UNSET | REV,  FLUSHO,     0 )
 #ifdef EXTPROC
 	MI_ENTRY("extproc",  local,       SANE_UNSET | REV,  EXTPROC,    0 )
+#endif
+#ifdef NOKERNINFO
+	MI_ENTRY("nokerninfo", local,     SANE_SET | REV,  NOKERNINFO, 0 )
 #endif
 };
 
